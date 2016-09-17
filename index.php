@@ -15,22 +15,20 @@
         <th>Age</th>
     </tr>
     <?php
-    $students[0]["nom"] = "Emmanuel";
-    $students[0]["age"] = 42;
-    $students[1]["nom"] = "Thierry";
-    $students[1]["age"] = 51;
-    $students[2]["nom"] = "Pascal";
-    $students[2]["age"] = 45;
-    $students[3]["nom"] = "Eric";
-    $students[3]["age"] = 48;
-    $students[4]["nom"] = "Nicolas";
-    $students[4]["age"] = 19;
-    $nbstudents = count($students);
+    $students = [
+        "Emmanuel"  => 42,
+        "Thierry"   => 51,
+        "Pascal"    => 45,
+        "Eric"      => 48,
+        "Nicolas"   => 19
+    ];
+    $nbstudents =0;
     $agetot = 0;
-    for ($i = 0; $i < $nbstudents; $i++) {
+    foreach ($students as $cle => $value) {
         echo "<tr> \n";
-        echo "<td>" . $students[$i]["nom"] . "</td>" . "<td>" . $students[$i]["age"] . "</td>";
-        $agetot += $students[$i]["age"];
+        echo "<td>" . $cle . "</td>" . "<td>" . $value . "</td>";
+        $agetot += $value;
+        $nbstudents += 1;
         echo "</tr> \n";
     }
     echo "<tr> \n";
